@@ -1,5 +1,67 @@
-- 2012
-- Higs Boson
+- ### 2011
+
+2002
+
+- ### Ahorro Corporación, Team leader
+- Team leader and project Manager
+
+Developed soft real-time system connected to financial electronic markets
+
+Analyst, architect, designer and tech guru
+
+System connected to Eurex, LIFFE, MEFF, SENAF, MTS, SIBE, CME, FIX protocol as acceptor and receptor
+
+OMS and automatic orders development
+
+Distribuited scalable, highly paralel system. Working on a message middleware (tibco/rv)
+
+IT and bussiness coordinator
+
+
+
+- ### 2002
+
+2001
+
+- ### Ahorro Corporación, Analyst and programer
+- Creation of a terminal and engines for automatic orders connected to some electronic markets
+
+- ### ­2001
+
+1994
+- ### Programmer and IT assistant at Gesmosa­GBI
+- Developing some financial calculations libraries and applications
+
+Database applications, general IT support in Gesmosa and link between bussines and IT
+
+- ### ­1993
+
+1988
+- Canary island's bank
+- Working in administrative tasks
+
+
+- ### ­1971
+- Great year
+- A Clockwork Orange on cinemas
+
+Intel introduces the microprocessor
+
+Cho Hao Li synthesizes the growth hormone
+
+Mariner IX, orbitting Mars
+
+Nixon ends the US trade embargo against China.
+
+**I was born**
+
+
+
+- ### 2012
+
+2011
+
+- ### Higs Boson
 - Higgs boson is discovered at CERN (confirmed to 99.999% certainty)
 
 - 2010
