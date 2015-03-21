@@ -4,21 +4,32 @@
 import 'dart:html';
 
 import 'package:polymer/polymer.dart';
+import 'package:markdown/markdown.dart' show markdownToHtml;
+
 
 /// A Polymer `<time-line>` element.
 @CustomTag('time-line')
 class TimeLine extends PolymerElement {
+  @published String header="missing header";
+  @published String subject="missing subject";
+  @published String url_doc="";
+
+
   int _id = 0;
 
   /// Constructor used to create instance of MainApp.
   TimeLine.created() : super.created()
   {
-    //  test
-    /*
-    add("aa", "kk", "kkkkk");
-    add("aa", "kk", "kkkkk");
-    add("aa", "kk", "kkkkk");
-    */
+    var item = new HtmlHtmlElement();
+    item.appendHtml(markdownToHtml(header));
+    item.appendHtml(markdownToHtml(subject));
+    $["header"].children.add(item);
+
+    //TimeLine  tl = document.querySelector('#timeline');
+
+    HttpRequest.getString(url_doc)
+        .then((text) => appendDocument(text));
+
   }
 
   void add(String date, String label, String content) {
@@ -29,19 +40,31 @@ class TimeLine extends PolymerElement {
     item.appendHtml('''      <li class='work'>
         <input class='radio' id='work${_id}' name='works' type='radio' ${_id==1? "checked" :""}>
         <div class="relative">
-          <label for='work${_id}'>${label}</label>
-          <span class='date'>${date}</span>
+          <label for='work${_id}'>${markdownToHtml(label)}</label>
+          <span class='date'>${markdownToHtml(date)}</span>
           <span class='circle'></span>
         </div>
         <div class='content'>
           <p>
-            ${content}
+            ${markdownToHtml(content.trim())}
           </p>
         </div>
       </li>
       ''');
   }
 
+
+  void appendDocument(String document) {
+    document = "\n" + document;
+    var lines = document.split("\n- ");
+    var counter=0;
+    while(counter<lines.length)
+    {
+      while(lines[counter]=="")  counter++;
+      add(lines[counter], lines[counter+1], lines[counter+2]);
+      counter += 3;
+    }
+  }
   // Optional lifecycle methods - uncomment if needed.
 
 //  /// Called when an instance of main-app is inserted into the DOM.

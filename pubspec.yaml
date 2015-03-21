@@ -5,6 +5,7 @@ environment:
   sdk: '>=1.0.0 <2.0.0'
 dependencies:
   browser: any
+  markdown: any
   polymer: '>=0.15.4 <0.16.0'
 transformers:
 - polymer:
