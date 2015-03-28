@@ -55,6 +55,10 @@ class TimeLine extends PolymerElement {
 
 
   void appendDocument(String document) {
+    DateTime today = new DateTime.now();
+    String dateSlug ="${today.year.toString()}-${today.month.toString().padLeft(2,'0')}-${today.day.toString().padLeft(2,'0')}";
+    document = document.replaceAll(new RegExp(r'{{now}}'), dateSlug);
+
     document = "\n" + document;
     var lines = document.split("\n- ");
     var counter=0;
